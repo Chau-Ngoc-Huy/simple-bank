@@ -12,3 +12,5 @@ sqlc:
 	docker run --rm -v "D:\Goland_Project\simple-bank:/src" -w /src kjconroy/sqlc generate
 test:
 	go test -v -cover ./...
+container:
+	docker exec -it postgres1 psql -U root -d simple_bank
