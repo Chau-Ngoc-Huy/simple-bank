@@ -33,13 +33,13 @@ jobs:
         with:
           go-version: '1.20'
 
-      - name: install migrate
+      - name: Install Migrate
         run: |
           curl -L https://github.com/golang-migrate/migrate/releases/download/v4.16.2/migrate.linux-amd64.tar.gz | tar xvz
-          sudo mv migrate.linux-amd64 /usr/bin/migrate
+          sudo mv migrate /usr/bin/
           which migrate
 
-      - name: run migration
+      - name: Run Migration
         run: make migrateup
 
       - name: Test
