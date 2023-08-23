@@ -16,3 +16,5 @@ test:
 	go test -v -cover ./...
 container:
 	docker exec -it postgres1 psql -U root -d simple_bank
+mock:
+	mockgen -destination db/mock/store.go -package mockdb --build_flags=--mod=mod github.com/simple-bank/db/sqlc Store
